@@ -1,0 +1,7 @@
+import h5py
+
+rad=int(sys.argv[1])
+expdir = '/mnt/sink/scratch/claire/ABC/'
+timeUnit='segment'
+mat=h5py.File(expdir + 'fMRI/timeseries/' + timeUnit + '/wholeBrain/fmri_segment.mat','r')
+fmri_data=mat['gdata'].value
