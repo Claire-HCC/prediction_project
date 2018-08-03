@@ -6,14 +6,12 @@ from mvpa2.suite import *
 import matplotlib.pyplot as plt
 from scipy import stats
 
-folder = "C:/Users/Linda\MIND_python/mind_2018-master/tutorials/sherlock_nifti_kit_v2_withdata/subjects/"
+folder = "C:/Users/Linda/MIND_python/mind_2018-master/tutorials/sherlock_nifti_kit_v2_withdata/subjects/"
 subfolders = [f.path for f in os.scandir(folder) if f.is_dir() ]   
 
 roifile='pmc_nn'
 
 #load the data for all subjects for one ROI file
-res = re.findall("subjects/s([0-9]+)", subfolders[0])
-mat=scipy.io.loadmat(subfolders[0] + '/sherlock_movie/' +  roifile + '_sherlock_movie_s' + res[0])
 run_datasets=[];
 for i in subfolders:
     res = re.findall("subjects/s([0-9]+)", i)
